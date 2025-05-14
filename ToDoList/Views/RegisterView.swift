@@ -32,7 +32,7 @@ struct RegisterView: View {
                 
                 TLButton(title: "Create an Account", background: .mint) {
                     // Attempt Registration
-                    
+                    viewModel.register()
                 }
             }
             .offset(y: -50)
