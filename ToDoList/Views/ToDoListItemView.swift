@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ToDoListItemView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @StateObject var viewModel = ProfileViewViewModel()
     
     let item: ToDoListItem
@@ -28,6 +30,7 @@ struct ToDoListItemView: View {
                 viewModel.toggleCheckmark(item: item)
             } label: {
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(colorScheme == .dark ? .mint : .indigo)
             }
         }
     }
